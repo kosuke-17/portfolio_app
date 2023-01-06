@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 import Loading from '@/components/atoms/Loading'
 import PortfolioCard from '@/components/organisms/PortfolioCard'

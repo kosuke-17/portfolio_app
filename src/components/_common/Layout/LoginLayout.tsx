@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { FC, ReactNode } from 'react'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 type Props = {
   title: string

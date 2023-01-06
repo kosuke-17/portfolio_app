@@ -3,7 +3,7 @@ import { signIn } from 'next-auth/react'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 const StyledCard = styled(Stack)(({ theme }) => ({
   width: '50%',

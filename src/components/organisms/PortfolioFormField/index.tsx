@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useFormContext } from 'react-hook-form'
 import Stack from '@mui/material/Stack'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 
 import CustomTextField from '@/components/molucules/CustomTextField'

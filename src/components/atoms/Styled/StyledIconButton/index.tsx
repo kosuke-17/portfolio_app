@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 const StyledIconButton = styled(IconButton)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,

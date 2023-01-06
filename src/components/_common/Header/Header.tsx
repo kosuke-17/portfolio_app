@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
 import SearchIcon from '@mui/icons-material/Search'
 

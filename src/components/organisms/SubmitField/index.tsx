@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 import { useFormContext } from 'react-hook-form'
 
 import SwitchGroup from '@/components/organisms/SwitchGroup'

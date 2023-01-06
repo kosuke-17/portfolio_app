@@ -1,5 +1,5 @@
 import Avatar from '@mui/material/Avatar'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 type Props = {
   width: number

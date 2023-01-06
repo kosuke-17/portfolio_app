@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { OutlinedInput as MuiOutlinedInput } from '@mui/material'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 type Props = {
   id: string

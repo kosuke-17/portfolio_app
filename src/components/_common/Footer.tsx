@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 const StyledFooter = styled('footer')(({ theme }) => ({
   height: '160px',

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Image from 'next/image'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'

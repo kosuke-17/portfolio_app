@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react'
-import { styled } from '@mui/system'
+import { styled } from '@mui/material/styles'
 
 import Header from '@/components/_common/Header/Header'
 import Footer from '@/components/_common/Footer'
