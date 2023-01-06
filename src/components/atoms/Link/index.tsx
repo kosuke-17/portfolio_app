@@ -14,10 +14,7 @@ const Link: FC<Props> = ({ href, sx, children }) => {
     <MuiLink
       href={href}
       component={NextLink}
-      sx={{
-        textDecoration: 'none',
-        ...sx,
-      }}
+      sx={{ textDecoration: 'none', ...sx }}
     >
       {children}
     </MuiLink>

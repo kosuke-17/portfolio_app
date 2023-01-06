@@ -10,6 +10,8 @@ import ProfileCard from '@/components/organisms/ProfileCard'
 import useHooks from './hooks'
 import CertificationCard from '../CertificationCard'
 import HistoryCard from '../HistoryCard'
+import DialogTitle from '@mui/material/DialogTitle'
+import Dialog from '@mui/material/Dialog'
 
 export type TabType = 'history' | 'certification'
 
@@ -41,7 +43,16 @@ const StyledRightContentBox = styled(Box)(() => ({
 }))
 
 const ProfileDetail: FC<{ userId: string }> = ({ userId }) => {
-  const { profile, histories, certifications, value, handleChange } = useHooks({
+  const {
+    profile,
+    histories,
+    certifications,
+    value,
+    handleChange,
+    open,
+    handleOpenDialog,
+    handleCloseDialog,
+  } = useHooks({
     userId,
   })
 
@@ -51,27 +62,36 @@ const ProfileDetail: FC<{ userId: string }> = ({ userId }) => {
   ]
 
   return (
-    <StyledProfileDetailStack direction='row' spacing={4}>
-      <StyledLeftContentBox>
-        <Tabs value={value} onChange={handleChange}>
-          {tabs.map(({ label, value }) => (
-            <Tab
-              key={label}
-              label={<StyledTabLabelBox>{label}</StyledTabLabelBox>}
-              value={value}
-              sx={{ marginLeft: 0.5 }}
-            />
-          ))}
-        </Tabs>
+    <>
+      <StyledProfileDetailStack direction='row' spacing={4}>
+        <StyledLeftContentBox>
+          <Tabs value={value} onChange={handleChange}>
+            {tabs.map(({ label, value }) => (
+              <Tab
+                key={label}
+                label={<StyledTabLabelBox>{label}</StyledTabLabelBox>}
+                value={value}
+                sx={{ marginLeft: 0.5 }}
+              />
+            ))}
+          </Tabs>
 
-        <HistoryCard histories={histories} value={value} />
-        <CertificationCard certifications={certifications} value={value} />
-      </StyledLeftContentBox>
+          <HistoryCard
+            histories={histories}
+            value={value}
+            handleOpenDialog={handleOpenDialog}
+          />
+          <CertificationCard certifications={certifications} value={value} />
+        </StyledLeftContentBox>
 
-      <StyledRightContentBox>
-        <ProfileCard profile={profile} />
-      </StyledRightContentBox>
-    </StyledProfileDetailStack>
+        <StyledRightContentBox>
+          <ProfileCard profile={profile} />
+        </StyledRightContentBox>
+      </StyledProfileDetailStack>
+      <Dialog onClose={handleCloseDialog} open={open}>
+        <DialogTitle>追加のダイアログ</DialogTitle>
+      </Dialog>
+    </>
   )
 }
 

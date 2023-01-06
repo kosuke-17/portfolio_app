@@ -3,13 +3,13 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 import StyledAvatar from '@/components/atoms/Styled/StyledAvatar'
 import Link from '@/components/atoms/Link'
-import StyledIconButton from '@/components/atoms/Styled/StyledIconButton'
+import IconButton from './IconButton'
 
 type Props = {
   userImage: string
 }
 
-const CircleAvatar: FC<Props> = ({ userImage }) => {
+const AvatarCircle: FC<Props> = ({ userImage }) => {
   return (
     <Link href='/profile'>
       {userImage ? (
@@ -20,12 +20,14 @@ const CircleAvatar: FC<Props> = ({ userImage }) => {
           height={36}
         />
       ) : (
-        <StyledIconButton>
-          <AccountCircleIcon aria-label='search' fontSize='small' />
-        </StyledIconButton>
+        <IconButton
+          icon={<AccountCircleIcon />}
+          aria-label='search'
+          fontSize='small'
+        />
       )}
     </Link>
   )
 }
 
-export default CircleAvatar
+export default AvatarCircle

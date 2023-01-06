@@ -3,11 +3,11 @@ import { styled } from '@mui/system'
 import Stack from '@mui/material/Stack'
 import SearchIcon from '@mui/icons-material/Search'
 
-import CircleAvatar from '@/components/atoms/CircleAvatar'
 import Logo from '@/components/atoms/Logo'
+import AvatarCircle from '@/components/atoms/AvatarCircle'
 import StyledHeader from '@/components/atoms/Styled/StyledHeader'
-import StyledIconButton from '@/components/atoms/Styled/StyledIconButton'
 import MenuGroups from '@/components/organisms/MenuGroups'
+import IconButton from '@/components/atoms/AvatarCircle/IconButton'
 
 const StyledMenuGroups = styled(Stack)(({ theme }) => ({
   display: 'flex',
@@ -24,11 +24,13 @@ const Header: FC = () => {
       <Logo />
 
       <StyledMenuGroups direction='row' spacing={2}>
-        <StyledIconButton>
-          <SearchIcon aria-label='search' fontSize='small' />
-        </StyledIconButton>
+        <IconButton
+          icon={<SearchIcon />}
+          aria-label='search'
+          fontSize='small'
+        />
 
-        <CircleAvatar userImage={userImage} />
+        <AvatarCircle userImage={userImage} />
 
         <MenuGroups />
       </StyledMenuGroups>

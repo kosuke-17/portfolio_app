@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import SchoolIcon from '@mui/icons-material/School'
+import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 
 import TabPanel from '@/components/atoms/TabPanel'
@@ -22,6 +23,7 @@ type Props = {
       }[]
     | undefined
   value: TabType
+  handleOpenDialog: () => void
 }
 
 export const StyledDateColumnBox = styled(Box)(({ theme }) => ({
@@ -53,9 +55,12 @@ const StyledSchoolIcon = styled(SchoolIcon)(({ theme }) => ({
   padding: theme.spacing(1),
 }))
 
-const HistoryCard: FC<Props> = ({ histories, value }) => {
+const HistoryCard: FC<Props> = ({ histories, value, handleOpenDialog }) => {
   return (
     <Paper elevation={3}>
+      <Button variant='outlined' onClick={handleOpenDialog}>
+        追加
+      </Button>
       <TabPanel value={value} tabType='history'>
         <Divider orientation='vertical' />
 

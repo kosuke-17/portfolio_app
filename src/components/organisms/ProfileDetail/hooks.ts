@@ -15,9 +15,18 @@ const useHooks = ({ userId }: { userId: string }) => {
       userId,
     })
   const [value, setValue] = useState<TabType>('history')
+  const [open, setOpenDialog] = useState(false)
 
   const handleChange = (_: SyntheticEvent, selectedTabType: TabType) => {
     setValue(selectedTabType)
+  }
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true)
+  }
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false)
   }
 
   return {
@@ -26,6 +35,9 @@ const useHooks = ({ userId }: { userId: string }) => {
     certifications,
     value,
     handleChange,
+    open,
+    handleOpenDialog,
+    handleCloseDialog,
   }
 }
 export default useHooks
