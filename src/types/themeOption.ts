@@ -1,6 +1,6 @@
 declare module '@mui/material/styles/createPalette' {
-  interface PaletteOptions {
-    border?: {
+  interface Palette {
+    border: {
       color: {
         default: string
         focus: string
