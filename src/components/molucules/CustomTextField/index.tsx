@@ -17,7 +17,7 @@ type Props = {
   label?: string
   placeholder?: string
   variant?: string
-  readOnly: boolean
+  readOnly?: boolean
   multiline?: boolean
   minRows?: number
   inputProps?: OutlinedInputProps
@@ -39,7 +39,7 @@ const CustomTextField: FC<Props> = ({
   defaultValue,
   control,
   label,
-  readOnly,
+  readOnly = false,
   ...rest
 }) => {
   const {

@@ -1,9 +1,7 @@
-import { t, authedProcedure } from '../trpc'
-import {
-  getPortfolioSchema,
-  postPortfolioSchema,
-} from '../../../schema/portfolio'
 import { Prisma } from '@prisma/client'
+
+import { t, authedProcedure } from '../trpc'
+import { getPortfolioSchema, postPortfolioSchema } from '@/schema/portfolio'
 
 // selectに型を付与
 // https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#generated-types-for-select

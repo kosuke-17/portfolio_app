@@ -59,9 +59,7 @@ const useHooks = ({ id }: Props) => {
   const checkUnClickable = () => watchFields.some((f) => !f.length)
 
   const create: SubmitHandler<DefaultValues> = (values: DefaultValues) => {
-    postPortfolioMutation.mutate({
-      ...values,
-    })
+    postPortfolioMutation.mutate(values)
     router.push('/')
   }
 

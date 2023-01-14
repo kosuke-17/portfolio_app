@@ -5,13 +5,12 @@ import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import { styled } from '@mui/material/styles'
 
+import CertificationCard from '@/components/organisms/CertificationCard'
+import HistoryCard from '@/components/organisms/HistoryCard'
+import HistoryAddDialog from '@/components/organisms/HistoryAddDialog'
 import ProfileCard from '@/components/organisms/ProfileCard'
 
 import useHooks from './hooks'
-import CertificationCard from '../CertificationCard'
-import HistoryCard from '../HistoryCard'
-import DialogTitle from '@mui/material/DialogTitle'
-import Dialog from '@mui/material/Dialog'
 
 export type TabType = 'history' | 'certification'
 
@@ -88,9 +87,8 @@ const ProfileDetail: FC<{ userId: string }> = ({ userId }) => {
           <ProfileCard profile={profile} />
         </StyledRightContentBox>
       </StyledProfileDetailStack>
-      <Dialog onClose={handleCloseDialog} open={open}>
-        <DialogTitle>追加のダイアログ</DialogTitle>
-      </Dialog>
+
+      <HistoryAddDialog open={open} onClose={handleCloseDialog} />
     </>
   )
 }

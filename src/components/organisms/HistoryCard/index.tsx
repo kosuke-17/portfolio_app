@@ -1,11 +1,11 @@
 import { FC } from 'react'
-import Divider from '@mui/material/Divider'
 import Box from '@mui/material/Box'
+import Fab from '@mui/material/Fab'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import SchoolIcon from '@mui/icons-material/School'
-import Button from '@mui/material/Button'
+import AddIcon from '@mui/icons-material/Add'
 import { styled } from '@mui/material/styles'
 
 import TabPanel from '@/components/atoms/TabPanel'
@@ -58,44 +58,57 @@ const StyledSchoolIcon = styled(SchoolIcon)(({ theme }) => ({
 const HistoryCard: FC<Props> = ({ histories, value, handleOpenDialog }) => {
   return (
     <Paper elevation={3}>
-      <Button variant='outlined' onClick={handleOpenDialog}>
-        追加
-      </Button>
       <TabPanel value={value} tabType='history'>
-        <Divider orientation='vertical' />
+        <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+          <Fab
+            onClick={handleOpenDialog}
+            color='primary'
+            size='small'
+            aria-label='add'
+          >
+            <AddIcon />
+          </Fab>
+        </Box>
+        <Box>
+          {histories
+            ? histories.map(
+                ({ description, name, startedAt, endedAt }, idx) => {
+                  return (
+                    <Box key={name}>
+                      <Stack
+                        direction='row'
+                        spacing={1}
+                        sx={{ display: 'flex' }}
+                      >
+                        <StyledDateColumnBox>
+                          {getDateYYYYM(endedAt)}
+                          <br />-<br />
+                          {getDateYYYYM(startedAt)}
+                        </StyledDateColumnBox>
+                        <Box>
+                          <StyledSchoolIcon />
 
-        {histories
-          ? histories.map(({ description, name, startedAt, endedAt }, idx) => {
-              return (
-                <Box key={name}>
-                  <Stack direction='row' spacing={1} sx={{ display: 'flex' }}>
-                    <StyledDateColumnBox>
-                      {getDateYYYYM(endedAt)}
-                      <br />-<br />
-                      {getDateYYYYM(startedAt)}
-                    </StyledDateColumnBox>
-                    <Box>
-                      <StyledSchoolIcon />
+                          <StyledDividerBox
+                            idx={idx}
+                            rowMaxLength={histories.length}
+                          />
+                        </Box>
+                        <Box sx={{ paddingTop: '8px' }}>
+                          <Stack spacing={2}>
+                            <Typography sx={{ fontWeight: 700 }} variant='h5'>
+                              {name}
+                            </Typography>
 
-                      <StyledDividerBox
-                        idx={idx}
-                        rowMaxLength={histories.length}
-                      />
-                    </Box>
-                    <Box sx={{ paddingTop: '8px' }}>
-                      <Stack spacing={2}>
-                        <Typography sx={{ fontWeight: 700 }} variant='h5'>
-                          {name}
-                        </Typography>
-
-                        <Typography>{description}</Typography>
+                            <Typography>{description}</Typography>
+                          </Stack>
+                        </Box>
                       </Stack>
                     </Box>
-                  </Stack>
-                </Box>
+                  )
+                },
               )
-            })
-          : null}
+            : null}
+        </Box>
       </TabPanel>
     </Paper>
   )
