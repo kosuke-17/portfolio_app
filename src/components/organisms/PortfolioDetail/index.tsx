@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import SubmitHeader from '@/components/_common/Header/SubmitHeader'
+import SubmitHeader from '@/components/common/Header/SubmitHeader'
 import Loading from '@/components/atoms/Loading'
 import SubmitField from '@/components/organisms/SubmitField'
 import PortfolioFormField from '@/components/organisms/PortfolioFormField'

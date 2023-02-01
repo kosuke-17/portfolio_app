@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 
 import CustomTextField from '@/components/molucules/CustomTextField'
-import ImageField from '@/components/organisms/ImageField'
 import { DefaultValues } from '../PortfolioDetail/hooks'
 
 const StyledPortfolioFormField = styled(Box)(() => ({
@@ -44,8 +43,6 @@ const PortfolioFormField: FC<Props> = ({
   return (
     <StyledPortfolioFormField>
       <StyledStack spacing={2}>
-        {/* portfolio.imageが実装できたら変更 */}
-        <ImageField />
         <CustomTextField
           name='title'
           control={control}
