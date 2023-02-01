@@ -2,7 +2,6 @@ import { FC, ReactNode } from 'react'
 import { styled } from '@mui/material/styles'
 
 import Header from '@/components/common/Header/Header'
-import Footer from '@/components/common/Footer'
 
 type Props = {
   children: ReactNode
@@ -17,7 +16,6 @@ const PageLayout: FC<Props> = ({ children }) => {
     <>
       <Header />
       <StyledMainLayout>{children}</StyledMainLayout>
-      <Footer />
     </>
   )
 }

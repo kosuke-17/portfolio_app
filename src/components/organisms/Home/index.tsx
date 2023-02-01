@@ -57,7 +57,7 @@ const Home: FC = () => {
             <StyledGridRow key={grid.label}>
               <StyledGridLabel variant='h5'>{grid.label}</StyledGridLabel>
               <Swiper
-                slidesPerView={3}
+                slidesPerView={2}
                 navigation={true}
                 modules={[Navigation]}
               >

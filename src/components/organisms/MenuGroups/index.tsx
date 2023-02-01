@@ -1,8 +1,6 @@
 import { FC } from 'react'
-import { signOut } from 'next-auth/react'
 import CreateIcon from '@mui/icons-material/Create'
 import EditIcon from '@mui/icons-material/Edit'
-import LogoutIcon from '@mui/icons-material/Logout'
 
 import MenuGroup from '@/components/molucules/MenuGroup'
 import useHooks from './hooks'
@@ -21,13 +19,11 @@ const MenuGroups: FC = () => {
       icon: <EditIcon />,
     },
   ]
-  const itemsAboutMenu = [
-    {
-      label: t('common:Logout'),
-      onClick: () => signOut(),
-      icon: <LogoutIcon />,
-    },
-  ]
+  const itemsAboutMenu = [] as {
+    label: string
+    onClick: () => void
+    icon: JSX.Element
+  }[]
 
   return (
     <>
