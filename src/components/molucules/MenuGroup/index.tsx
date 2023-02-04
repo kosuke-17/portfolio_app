@@ -1,11 +1,11 @@
 import { FC, ReactNode } from 'react'
-import Button from '@mui/material/Button'
+import { Button as MUIButton } from '@mui/material'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-import { StyledButton } from '@/components/atoms/Styled/StyledButton'
+import Button from '@/components/atoms/Button'
 
 import useHooks from './hooks'
 import Box from '@mui/material/Box'
@@ -19,7 +19,7 @@ type Props = {
   name: string
 }
 
-const ItemButton = styled(Button)(() => ({
+const ItemButton = styled(MUIButton)(() => ({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
@@ -41,9 +41,7 @@ const MenuGroup: FC<Props> = ({ items, name }) => {
 
   return (
     <>
-      <StyledButton variant='contained' onClick={handleOpenMenu}>
-        {name}
-      </StyledButton>
+      <Button variant='contained' onClick={handleOpenMenu} label={name} />
       <Menu anchorEl={anchorEl} open={open} onClose={handleCloseMenu}>
         {items.map(({ label, onClick, icon }) => {
           return (
