@@ -1,6 +1,7 @@
 import Stack from '@mui/material/Stack'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+
 import IconButton, { IconButtonProps } from '.'
 
 export default {

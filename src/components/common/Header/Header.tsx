@@ -4,10 +4,19 @@ import Stack from '@mui/material/Stack'
 import SearchIcon from '@mui/icons-material/Search'
 
 import Logo from '@/components/atoms/Logo'
-import AvatarCircle from '@/components/atoms/AvatarCircle'
-import StyledHeader from '@/components/atoms/Styled/StyledHeader'
+import AvatarCircle from '@/components/molucules/AvatarCircle'
 import MenuGroups from '@/components/organisms/MenuGroups'
-import IconButton from '@/components/atoms/AvatarCircle/IconButton'
+import IconButton from '@/components/atoms/IconButton'
+
+const StyledHeader = styled('header')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  backgroundColor: theme.palette.common.white,
+  [theme.breakpoints.up('md')]: {
+    paddingLeft: theme.spacing(20),
+    paddingRight: theme.spacing(20),
+  },
+}))
 
 const StyledMenuGroups = styled(Stack)(({ theme }) => ({
   display: 'flex',

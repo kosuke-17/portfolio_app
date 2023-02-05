@@ -4,10 +4,10 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
+import Avatar from '@mui/material/Avatar'
 
 import Loading from '@/components/atoms/Loading'
 import CardContent from '@mui/material/CardContent'
-import StyledAvatar from '@/components/atoms/Styled/StyledAvatar'
 
 type Props = {
   profile:
@@ -20,6 +20,13 @@ type Props = {
       }
     | undefined
 }
+
+const StyledAvatar = styled(Avatar)<{ width: number; height: number }>(
+  ({ width, height }) => ({
+    width,
+    height,
+  }),
+)
 
 const StyledProfileCard = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(6),

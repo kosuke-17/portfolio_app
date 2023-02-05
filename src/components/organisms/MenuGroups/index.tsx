@@ -7,23 +7,21 @@ import useHooks from './hooks'
 
 const MenuGroups: FC = () => {
   const { t, moveToPage } = useHooks()
+  const userId = ''
   const itemsAboutPortfolio = [
     {
       label: t('portfolio:AddPortfolio'),
       onClick: () => moveToPage('/portfolios/new'),
       icon: <CreateIcon />,
     },
+  ]
+  const itemsAboutMenu = [
     {
-      label: t('portfolio:EditDraft'),
-      onClick: () => moveToPage('/portfolios/new'),
+      label: 'プロフィールを編集',
+      onClick: () => moveToPage(`/users/${userId}/profile/edit`),
       icon: <EditIcon />,
     },
   ]
-  const itemsAboutMenu = [] as {
-    label: string
-    onClick: () => void
-    icon: JSX.Element
-  }[]
 
   return (
     <>
