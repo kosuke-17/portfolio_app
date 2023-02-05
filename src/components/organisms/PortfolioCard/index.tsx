@@ -4,15 +4,22 @@ import Box from '@mui/material/Box'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Typography from '@mui/material/Typography'
+import Avatar from '@mui/material/Avatar'
 
 import Link from '@/components/atoms/Link'
-import StyledAvatar from '@/components/atoms/Styled/StyledAvatar'
 import theme from '@/utils/theme'
 
 type Props = {
   id: string
   title: string
 }
+
+const StyledAvatar = styled(Avatar)<{ width: number; height: number }>(
+  ({ width, height }) => ({
+    width,
+    height,
+  }),
+)
 
 const StyledPortfolioCard = styled(Box)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
