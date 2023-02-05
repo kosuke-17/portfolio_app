@@ -9,6 +9,8 @@ import Avatar from '@mui/material/Avatar'
 import Link from '@/components/atoms/Link'
 import theme from '@/utils/theme'
 
+import useHooks from './hooks'
+
 type Props = {
   id: string
   title: string
@@ -79,6 +81,8 @@ const StyledTitle = styled(Typography)(({ theme }) => ({
 }))
 
 const PortfolioCard: FC<Props> = ({ id, title }) => {
+  const { user } = useHooks()
+
   return (
     <StyledPortfolioCard>
       <StyledLink href={`portfolios/${id}`}>
@@ -86,12 +90,8 @@ const PortfolioCard: FC<Props> = ({ id, title }) => {
           <StyledTitle variant='subtitle1'>{title}</StyledTitle>
           <StyledSubContent>
             <StyledUserContent>
-              <StyledAvatar
-                src='https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                width={32}
-                height={32}
-              />
-              <StyledUserName>hogehoge</StyledUserName>
+              <StyledAvatar src={user?.image ?? ''} width={32} height={32} />
+              <StyledUserName>{user?.name}</StyledUserName>
             </StyledUserContent>
             <StyledFavoriteContent>
               {true ? (

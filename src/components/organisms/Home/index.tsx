@@ -62,7 +62,7 @@ const Home: FC = () => {
               >
                 {grid.rows &&
                   grid.rows.map((row) => (
-                    <Grid key={row.id} xs={6}>
+                    <Grid item key={row.id} xs={6}>
                       <PortfolioCard id={row.id} title={row.title} />
                     </Grid>
                   ))}

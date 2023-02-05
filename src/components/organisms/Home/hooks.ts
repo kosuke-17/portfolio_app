@@ -16,6 +16,7 @@ const useHooks = () => {
       rows: portfolios,
     },
   ]
+
   return { portfolios, isLoading, error, portfolioGridRows }
 }
 

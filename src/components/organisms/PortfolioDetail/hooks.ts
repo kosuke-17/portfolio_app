@@ -32,7 +32,7 @@ const useHooks = ({ id }: Props) => {
     description: '',
     serviceUrl: '',
     githubUrl: '',
-    isPublished: false,
+    isPublished: true,
   }
 
   const methods = useForm<DefaultValues>({
