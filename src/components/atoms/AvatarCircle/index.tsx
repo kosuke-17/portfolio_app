@@ -23,7 +23,7 @@ const AvatarCircle: FC<Props> = ({ userImage }) => {
         <IconButton
           icon={<AccountCircleIcon />}
           aria-label='search'
-          fontSize='small'
+          size='small'
         />
       )}
     </Link>

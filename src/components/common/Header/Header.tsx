@@ -24,11 +24,7 @@ const Header: FC = () => {
       <Logo />
 
       <StyledMenuGroups direction='row' spacing={2}>
-        <IconButton
-          icon={<SearchIcon />}
-          aria-label='search'
-          fontSize='small'
-        />
+        <IconButton icon={<SearchIcon />} aria-label='search' size='small' />
 
         <AvatarCircle userImage={userImage} />
 
