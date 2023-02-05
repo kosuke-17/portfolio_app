@@ -7,7 +7,7 @@ import Link from '@/components/atoms/Link'
 import IconButton from '@/components/atoms/IconButton'
 
 type Props = {
-  userImage: string
+  userImage: string | undefined | null
 }
 
 const StyledAvatar = styled(Avatar)<{ width: number; height: number }>(

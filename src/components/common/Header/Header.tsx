@@ -7,6 +7,7 @@ import Logo from '@/components/atoms/Logo'
 import AvatarCircle from '@/components/molucules/AvatarCircle'
 import MenuGroups from '@/components/organisms/MenuGroups'
 import IconButton from '@/components/atoms/IconButton'
+import { useSession } from 'next-auth/react'
 
 const StyledHeader = styled('header')(({ theme }) => ({
   display: 'flex',
@@ -26,8 +27,8 @@ const StyledMenuGroups = styled(Stack)(({ theme }) => ({
 }))
 
 const Header: FC = () => {
-  const userImage =
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8'
+  const { data } = useSession()
+
   return (
     <StyledHeader sx={{ borderBottom: `1px solid #e0e0e0` }}>
       <Logo />
@@ -35,7 +36,7 @@ const Header: FC = () => {
       <StyledMenuGroups direction='row' spacing={2}>
         <IconButton icon={<SearchIcon />} aria-label='search' size='small' />
 
-        <AvatarCircle userImage={userImage} />
+        <AvatarCircle userImage={data?.user?.image} />
 
         <MenuGroups />
       </StyledMenuGroups>
