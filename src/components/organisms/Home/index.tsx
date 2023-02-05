@@ -1,6 +1,4 @@
 import { FC } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
@@ -9,6 +7,7 @@ import Loading from '@/components/atoms/Loading'
 import PortfolioCard from '@/components/organisms/PortfolioCard'
 
 import useHooks from './hooks'
+import Grid from '@mui/material/Grid'
 
 const StyledGridTable = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -56,20 +55,18 @@ const Home: FC = () => {
           portfolioGridRows.map((grid) => (
             <StyledGridRow key={grid.label}>
               <StyledGridLabel variant='h5'>{grid.label}</StyledGridLabel>
-              <Swiper
-                slidesPerView={2}
-                navigation={true}
-                modules={[Navigation]}
+              <Grid
+                container
+                rowSpacing={1}
+                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
                 {grid.rows &&
-                  grid.rows.map(
-                    ({ id, title }: { id: string; title: string }) => (
-                      <SwiperSlide key={id}>
-                        <PortfolioCard id={id} title={title} />
-                      </SwiperSlide>
-                    ),
-                  )}
-              </Swiper>
+                  grid.rows.map((row) => (
+                    <Grid key={row.id} xs={6}>
+                      <PortfolioCard id={row.id} title={row.title} />
+                    </Grid>
+                  ))}
+              </Grid>
             </StyledGridRow>
           ))}
       </StyledGridTable>

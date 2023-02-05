@@ -18,13 +18,15 @@ const StyledAvatar = styled(Avatar)<{ width: number; height: number }>(
   ({ width, height }) => ({
     width,
     height,
+    ':hover': {
+      opacity: 0.5,
+    },
   }),
 )
 
 const StyledPortfolioCard = styled(Box)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
-  marginLeft: theme.spacing(1),
-  marginright: theme.spacing(1),
+  margin: theme.spacing(1),
 }))
 
 const StyledLink = styled(Link)(({ theme }) => ({
@@ -53,6 +55,9 @@ const StyledUserContent = styled(Box)(() => ({
 
 const StyledUserName = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,
+  ':hover': {
+    color: theme.palette.primary.main,
+  },
 }))
 
 const StyledFavoriteContent = styled(Box)(() => ({
@@ -68,6 +73,9 @@ const StyledFavoriteCount = styled(Box)(({ theme }) => ({
 const StyledTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
   fontWeight: 700,
+  ':hover': {
+    color: theme.palette.primary.main,
+  },
 }))
 
 const PortfolioCard: FC<Props> = ({ id, title }) => {
@@ -75,7 +83,7 @@ const PortfolioCard: FC<Props> = ({ id, title }) => {
     <StyledPortfolioCard>
       <StyledLink href={`portfolios/${id}`}>
         <StyledCardContent>
-          <StyledTitle variant='subtitle1'>{title + title + title}</StyledTitle>
+          <StyledTitle variant='subtitle1'>{title}</StyledTitle>
           <StyledSubContent>
             <StyledUserContent>
               <StyledAvatar
@@ -89,8 +97,11 @@ const PortfolioCard: FC<Props> = ({ id, title }) => {
               {true ? (
                 <FavoriteBorderIcon
                   sx={{
-                    color: theme.palette.grey[400],
+                    color: theme.palette.primary.main,
                     verticalAlign: 'middle',
+                    ':hover': {
+                      color: theme.palette.primary.dark,
+                    },
                   }}
                 />
               ) : (
