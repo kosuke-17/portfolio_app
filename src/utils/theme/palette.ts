@@ -24,5 +24,6 @@ export const palette = {
   },
   text: {
     primary: common.black,
+    secondary: grey[700],
   },
 }

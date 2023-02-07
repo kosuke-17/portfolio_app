@@ -5,6 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Typography from '@mui/material/Typography'
 import Avatar from '@mui/material/Avatar'
+import Stack from '@mui/material/Stack'
 
 import Link from '@/components/atoms/Link'
 import theme from '@/utils/theme'
@@ -28,7 +29,9 @@ const StyledAvatar = styled(Avatar)<{ width: number; height: number }>(
 
 const StyledPortfolioCard = styled(Box)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
-  margin: theme.spacing(1),
+  marginLeft: theme.spacing(1),
+  marginRight: theme.spacing(1),
+  marginTop: theme.spacing(1),
 }))
 
 const StyledLink = styled(Link)(({ theme }) => ({
@@ -45,18 +48,18 @@ const StyledCardContent = styled(Box)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
 }))
 
-const StyledSubContent = styled(Box)(() => ({
+const StyledSubContent = styled(Stack)(() => ({
   display: 'flex',
-  justifyContent: 'space-between',
 }))
 
-const StyledUserContent = styled(Box)(() => ({
+const StyledUserContent = styled(Stack)(() => ({
   display: 'flex',
   alignItems: 'center',
 }))
 
 const StyledUserName = styled(Box)(({ theme }) => ({
-  color: theme.palette.text.primary,
+  fontSize: 12,
+  color: theme.palette.text.secondary,
   ':hover': {
     color: theme.palette.primary.main,
   },
@@ -74,7 +77,9 @@ const StyledFavoriteCount = styled(Box)(({ theme }) => ({
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
+  fontSize: 18,
   fontWeight: 700,
+  marginBottom: theme.spacing(0.5),
   ':hover': {
     color: theme.palette.primary.main,
   },
@@ -87,9 +92,9 @@ const PortfolioCard: FC<Props> = ({ id, title }) => {
     <StyledPortfolioCard>
       <StyledLink href={`portfolios/${id}`}>
         <StyledCardContent>
-          <StyledTitle variant='subtitle1'>{title}</StyledTitle>
-          <StyledSubContent>
-            <StyledUserContent>
+          <StyledTitle>{title}</StyledTitle>
+          <StyledSubContent direction='row' spacing={1}>
+            <StyledUserContent direction='row' spacing={1}>
               <StyledAvatar src={user?.image ?? ''} width={32} height={32} />
               <StyledUserName>{user?.name}</StyledUserName>
             </StyledUserContent>
